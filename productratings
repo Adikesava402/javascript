@@ -1,0 +1,34 @@
+// Array to store ratings
+let ratings = [];
+
+// Function to add a rating
+function addRating(rating) {
+    if (rating >= 1 && rating <= 5) {
+        ratings.push(rating);
+        console.log("Rating added:", rating);
+    } else {
+        console.log("Please enter a rating between 1 and 5");
+    }
+}
+
+// Function to calculate average rating
+function getAverageRating() {
+    if (ratings.length === 0) {
+        return 0;
+    }
+
+    let sum = ratings.reduce((total, r) => total + r, 0);
+    return (sum / ratings.length).toFixed(2);
+}
+
+// Function to display ratings
+function showRatings() {
+    console.log("Ratings:", ratings);
+    console.log("Average Rating:", getAverageRating());
+}
+
+// Example usage
+addRating(5);
+addRating(4);
+addRating(3);
+showRatings();
