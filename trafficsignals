@@ -1,0 +1,13 @@
+let signals = ["Red", "Green", "Yellow"];
+let index = 0;
+
+function trafficSignal() {
+    console.log("Signal: " + signals[index]);
+
+    index++;
+    if (index === signals.length) {
+        index = 0;
+    }
+}
+
+setInterval(trafficSignal, 3000); // changes every 3 seconds
